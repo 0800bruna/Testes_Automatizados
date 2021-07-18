@@ -1,8 +1,9 @@
 require_relative "./FerramentasDeEscrita/Lapiseiras.rb"
+require_relative "./FerramentasDeEscrita/Papel.rb"
 
 describe Lapiseiras do
 
-    it "1. Validando atributos do construtor da lapiseira" do
+    it "Caso de teste 1: Validando atributos do construtor da lapiseira" do
         #Arrange
         lapiseira1 = Lapiseiras.new("rosa", 0.5, false, true, 13.70, "pentel")
 
@@ -16,7 +17,7 @@ describe Lapiseiras do
         expect(lapiseira1.getPressaoEscrita()).to eql 0
     end
 
-    it "2. Validando recarga da lapiseira" do
+    it "Caso de teste 2: Validando recarga da lapiseira" do
         lapiseira1 = Lapiseiras.new("rosa", 0.5, false, true, 13.70, "pentel")
 
 		lapiseira1.setQntGrafite(4)
@@ -25,7 +26,7 @@ describe Lapiseiras do
 		expect(lapiseira1.getGrafite()).to eql true
     end
 
-    it "3. Validando quebrar grafite" do
+    it "Caso de teste 3: Validando quebrar grafite" do
         lapiseira1 = Lapiseiras.new("rosa", 0.5, false, true, 13.70, "pentel")
 
 		lapiseira1.setQntGrafite(4)

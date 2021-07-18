@@ -1,4 +1,5 @@
 require_relative "./FerramentasDeEscrita.rb"
+require_relative "./Papel.rb"
 
 class Lapiseiras < FerramentasDeEscrita
 	attr_accessor :cor, :ponta, :tampa, :botao, :preco, :marca, :grafite, :qntGrafite
@@ -36,15 +37,15 @@ class Lapiseiras < FerramentasDeEscrita
 
 	#end
 
-	def escrever(texto, pressaoAtual)
+	def escrever(obj_papel, texto, pressaoAtual)
         if (pressaoAtual > 10)
             quebrarGrafite()
         elsif (pressaoAtual < 10)
             setPressaoEscrita(pressaoAtual)
-			textoTemporario = super(texto)
+			textoTemporario = super(texto) #Ferramentas.escrever(texto)
         end
 		setPressaoEscrita(0)
-		return textoTemporario
+		obj_papel.setTextoContido(textoTemporario)
     end
 
 	def pegarDaReserva()
